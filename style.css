@@ -1,0 +1,48 @@
+/* Reset some default browser styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Hero section */
+  #hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: #444;
+    color: #fff;
+  }
+  
+  /* Project cards */
+  .project-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+  }
+  
