@@ -15,6 +15,18 @@ body {
     flex-direction: column;
   }
 
+    nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+
   .hero-nav {
     display: flex;
     justify-content: flex-start;
@@ -138,16 +150,16 @@ body {
     display: block;   
   }
 
-  nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+  /* About */
+
+ #about {
+    padding: 20px;
+    margin-left: 20px;
+    text-align: left;
   }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
+
+  #about h3 {
+
   }
   
 
