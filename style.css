@@ -1,192 +1,210 @@
+/* ------------------- Base ------------------- */
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f7f7f7;
-  color: #222;
+  height: 100vh;
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(0,255,255,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,0,255,0.3) 1px, transparent 1px),
+    linear-gradient(rgba(0,255,0,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,0,0.1) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 100px 100px, 100px 100px;
+  animation: moveGrid 15s linear infinite;
+}
+
+/* Grid animation */
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, 100px 100px;
+  }
 }
 
 section {
   margin: 0;
   overflow: hidden;
 }
-  
-   /* Hero section */
-   #hero {
-    min-height: 70vh;
-    background: linear-gradient(135deg, #d3f8e2 0%, #a2f0c7 100%);
-    position: relative;       /* allows nav to stick inside hero */
-    padding: 20px;
-  }
-  
-  /* Sticky nav inside hero */
-  .hero-nav {
-    position: sticky;  /* sticks inside hero section */
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 12px 0;
-    background-color: rgba(18,18,18,0.95);
-    z-index: 10;
-  }
-  
-  .hero-nav ul {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .hero-nav a {
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  .hero-nav a:hover {
-    color: #d3f8e2; /* mint accent hover */
-  }
-  
-  .hero-content {
-    position: absolute;       /* remove from normal flow */
-    top: 50%;                 /* halfway down hero section */
-    left: 50%;                /* horizontally center */
-    transform: translate(-50%, -50%); /* truly center it */
-    display: flex;
-    gap: 40px;
-    background-color: rgba(255,255,255,0.95);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    max-width: 1000px;
-    width: 70%;
-  }
-  
-  .hero-photo img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: none;
-  }
-  
-  .hero-content p {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.6;
-  }
-  /*Project section*/
-  #projects {
-    background-color: #121212;
-    padding: 60px 0; /* more space above/below section */
-  }
-  
-  .project-header h1 {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    color: #fff;
-    margin-left: 20px;
-  }  
-  
-  .project-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;          /* more breathing room */
-    padding: 40px 20px; /* more space around the whole grid */
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .project-card {
-    background: #1e1e1e;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    border: 2px solid #d3f8e2; /* subtle mint accent */
-  }  
-  
-  .project-text {
-    position: absolute;
-    inset: 0;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* ------------------- Hero ------------------- */
+#hero {
+  min-height: 70vh;
+  position: relative;
+  padding: 20px;
+  background-color: rgba(18,18,18,0.6); /* semi-transparent dark overlay */
+}
 
-    padding: 16px;
-    color: #fff;
+/* Sticky nav inside hero */
+.hero-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  background-color: rgba(18,18,18,0.95);
+  z-index: 10;
+}
 
-    .project-text {
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.75),
-        rgba(0, 0, 0, 0.1) 60%
-      );
-    }
+.hero-nav ul {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 1;
-  }
+.hero-nav a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
 
-  .project-card:hover .project-text {
-    opacity: 1;
-    pointer-events: auto;
-  }
+.hero-nav a:hover {
+  color: #0ff; /* cyan accent hover */
+}
 
-  .project-text h3 {
-    margin-top: 6px;
-    margin-bottom: 2px;
-  }
+/* Hero content card */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 40px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  max-width: 1000px;
+  width: 70%;
+}
 
-  .project-text p {
-    margin-top: 3px;
-    margin-bottom: 4px;
-  }
+.hero-photo img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: none;
+}
 
-  .project-image {
-    position: relative;
-    aspect-ratio: 16/9;;
-  }
+.hero-content p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
 
-  .project-image img {
-    width: 100%;   
-    height: 100%;   
-    object-fit: cover; 
-    display: block;   
-  }
+/* ------------------- Projects ------------------- */
+#projects {
+  background-color: rgba(18,18,18,1);
+  padding: 60px 0;
+}
 
-  /* About */
+.project-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #0ff; /* cyan for headings */
+  margin-left: 20px;
+}
 
-  #about {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 80px 20px;
-  }
-  
-  #about h1 {
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
-  
-  #about p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  
+.project-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  
+.project-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,255,255,0.3);
+  border: 2px solid #0ff; /* neon accent */
+}
+
+.project-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.1) 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-card:hover .project-text {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-text h3 {
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.project-text p {
+  margin-top: 3px;
+  margin-bottom: 4px;
+}
+
+.project-image {
+  position: relative;
+  aspect-ratio: 16/9;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ------------------- About ------------------- */
+#about {
+  max-width: 800px;            /* keeps box from being too wide */
+  margin: 80px auto;           /* auto left/right centers it horizontally */
+  padding: 80px 40px;
+  background-color: white;   /* dark background to match your theme */
+  color: #fff;
+  border-radius: 12px;         /* optional: rounded corners */
+  display: flex;               /* use flexbox to center content vertically & horizontally */
+  flex-direction: column;
+  align-items: center;         /* center content horizontally */
+  text-align: center;          /* center text inside */
+}
+
+#about h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #0ff;                 /* neon cyan accent */
+}
+
+#about p {
+  color: black;
+  font-size: 16px;
+  line-height: 1.6;
+  align-self: left;
+}
+
