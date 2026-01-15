@@ -7,6 +7,9 @@
   <title>Mitchell Thai | Portfolio</title>
   <link rel="stylesheet" href="style.css"> 
   <script src="https://kit.fontawesome.com/4b309a77cc.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <script src="script.js"></script>
@@ -15,11 +18,11 @@
         <nav class="hero-nav">
             <ul>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">About</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://docs.google.com/document/d/1lPtCiXsaQTFcae4d9IsCHp7zxARriza_/edit?usp=sharing&ouid=111863541173122451503&rtpof=true&sd=true">Resume</a></li>
+                <li><a href="www.linkedin.com/in/mitchell-thai-218512345"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/MitchyTh"><i class="fab fa-github"></i></a></li>
             </ul>
         </nav>
         <div class="hero-content">
@@ -34,6 +37,7 @@
     <section id="projects">
         <div class="project-header">
             <h1>My Projects</h1>
+            <h3>Interactive and software projects highlighting technical expertise and creativity.</h3>
         </div>
         <div class="project-container">
             <a class="project-card" href="https://agregory-vhs.itch.io/radio-six">
@@ -77,10 +81,33 @@
     <!--About me section-->
     <section id="about">
         <h1>About</h1>
-        <p>I am a student, pursuing my Bachelor's in Computer Science student at Florida State University, with a passion for game deveopment and design. 
-        I focus on building games with engaging systems and meaningful player interactions. I’m eager to grow my skills and contribute to creative projects.
+        <p>I’m Mitchell Thai, an Honors Computer Science student at Florida State University specializing in game development. I create polished 2D and 3D games using Unity, and Unreal Engine, and I also build full-stack applications and other software projects, leveraging C#, C++, Python, and Java. My work combines technical expertise and versatility to deliver high-quality, engaging experiences across games and software.
     </p>
     </section>
 
+    <section id="contact">
+        <div class="contact-inner">
+          <h1>Contact Me</h1>
+          <p>Have a project or question? Send me a message below.</p>
+      
+          <form class="contact-form" action="mailto:your.email@example.com" method="POST" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+      
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+      
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+      
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+      
+    <footer>
+        <p>© 2026 Mitchell Thai</p>
+      </footer>
+      
 </body>
 </html>
